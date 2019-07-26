@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Form } from 'semantic-ui-react';
 import ButtonExampleShorthand from "./Button";
+import "../index.css";
 
 const SearchDiv = styled.div`
     text-align: center;
@@ -17,7 +19,7 @@ export default function SearchForm({ onSearch }) {
 
   return (
     <SearchDiv className="search-form">
-      <form onSubmit={(event) => {
+      <form class="ui form" onSubmit={(event) => {
         event.preventDefault()
         onSearch(query)
       }}>
@@ -27,7 +29,7 @@ export default function SearchForm({ onSearch }) {
           value={query.name}
           name="name"
         />
-        <ButtonExampleShorthand type="submit" content="Search"></ButtonExampleShorthand>
+        <ButtonExampleShorthand class ="ui button search" type="submit" content="Search"></ButtonExampleShorthand>
       </form>
     </SearchDiv>
   );
