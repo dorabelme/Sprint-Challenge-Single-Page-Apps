@@ -45,3 +45,10 @@ header h1 {
   display: flex;
   justify-content: center;
 }
+
+input {
+  margin: 20px;
+  height: 35px;
+  font-family: sans-serif;
+}
+

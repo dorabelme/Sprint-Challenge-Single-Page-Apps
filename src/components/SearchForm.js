@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import ButtonExampleShorthand from "./Button";
 
 const SearchDiv = styled.div`
     text-align: center;
@@ -22,11 +23,11 @@ export default function SearchForm({ onSearch }) {
       }}>
         <input
           onChange={handleInputChange}
-          placeholder="name"
+          placeholder="Name"
           value={query.name}
           name="name"
         />
-        <button type="submit">Search</button>
+        <ButtonExampleShorthand type="submit" content="Search"></ButtonExampleShorthand>
       </form>
     </SearchDiv>
   );

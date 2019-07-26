@@ -37,7 +37,7 @@ export default function CharacterCard (props) {
   const { character } = props;
   return (
     <CardContent>
-      <img className="main-img ui centered medium circular image" src={character.image} alt={character.name}></img>
+      <img className="main-img ui centered medium" src={character.image} alt={character.name}></img>
       <Title>{character.name}</Title>
       <StyledPar>Species: {character.species} {character.status}</StyledPar>
       {/* <StyledP>Status: {character.status}</StyledP> */}
