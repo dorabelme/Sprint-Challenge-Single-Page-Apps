@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LocationCard from "./LocationCard";
 import axios from 'axios';
+import SearchForm from "./SearchForm";
 
 export default function LocationList() {
     // TODO: Add useState to track data from useEffect
@@ -19,11 +20,26 @@ export default function LocationList() {
             });
     }, [])
 
-    return <section className='character-list grid-view'>
-        {/* <h2> */}
-        {locations.map(location => <LocationCard key={location.id} {...location} />)}
-        {/* // TODO: `array.map()` over your state here! */}
-        {/* </h2> */}
-    </section>
+    function onSearch(query) {
+        axios
+            .get(`https://rickandmortyapi.com/api/location/?name=${query.name}`)
+            .then(response => {
+                setLocations(response.data.results);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
 
+    return (
+        <div>
+            <SearchForm onSearch={onSearch} />
+            <section className='character-list grid-view'>
+                {/* <h2> */}
+                {locations.map(location => <LocationCard key={location.id} {...location} />)}
+                {/* // TODO: `array.map()` over your state here! */}
+                {/* </h2> */}
+            </section>
+        </div>
+    )
 }

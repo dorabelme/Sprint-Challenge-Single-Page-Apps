@@ -21,7 +21,6 @@ export default function CharacterList() {
   }, [])
 
   function onSearch(query) {
-    console.log(query)
       axios
         .get(`https://rickandmortyapi.com/api/character/?name=${query.name}`)
         .then(response => {
