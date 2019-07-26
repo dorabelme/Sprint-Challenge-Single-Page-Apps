@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 const CardContent = styled.div`
     width: 400px;
@@ -33,15 +34,15 @@ const StyledPar = styled.p`
 `;
 
 
-export default function LocationCard ({ name, type, dimension, residents }) {
-  // image={image}
-  return (
-    <CardContent>
-      <Title>{ name }</Title>
-      <StyledP>Type: {type}</StyledP>
-      {/* <StyledP>Status: {character.status}</StyledP> */}
-      <StyledP>Dimension: {dimension}</StyledP>
-      <StyledPar>Residents: {residents && residents.length}</StyledPar>
-    </CardContent>
-  )
+export default function EpisodeCard({ name, air_date, episode, url }) {
+    // image={image}
+    return (
+        <CardContent>
+            <Title>{name}</Title>
+            <StyledP>Date: {air_date}</StyledP>
+            {/* <StyledP>Status: {character.status}</StyledP> */}
+            <StyledP>Episode: {episode}</StyledP>
+            <Link to={url}>Watch</Link>
+        </CardContent>
+    )
 }
