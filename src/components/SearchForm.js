@@ -1,4 +1,10 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
+
+const SearchDiv = styled.div`
+    text-align: center;
+    margin-bottom: 20px;
+`;
 
 export default function SearchForm({ onSearch }) {
   const [query, setQuery] = useState({
@@ -9,7 +15,7 @@ export default function SearchForm({ onSearch }) {
   }
 
   return (
-    <section className="search-form">
+    <SearchDiv className="search-form">
       <form onSubmit={(event) => {
         event.preventDefault()
         onSearch(query)
@@ -22,6 +28,6 @@ export default function SearchForm({ onSearch }) {
         />
         <button type="submit">Search</button>
       </form>
-    </section>
+    </SearchDiv>
   );
 }
