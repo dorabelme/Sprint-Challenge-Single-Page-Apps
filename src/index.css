@@ -18,6 +18,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  flex-direction: row;
 }
 
 .page-view {
@@ -38,3 +39,25 @@ header h1 {
   text-align: center;
 
 }
+
+
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+}
+
+
+.ui .form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui.form input:not([type]) {
+  width: 10rem;
+}
+.ui .button {
+  margin: 1rem;
+} 
+

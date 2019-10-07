@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { Link } from "react-router-dom";
 
 const CardContent = styled.div`
     width: 400px;
@@ -33,16 +33,16 @@ const StyledPar = styled.p`
   color: grey;
 `;
 
-export default function CharacterCard (props) {
-  const { character } = props;
-  return (
-    <CardContent>
-      <img className="main-img ui centered medium" src={character.image} alt={character.name}></img>
-      <Title>{character.name}</Title>
-      <StyledPar>Species: {character.species} {character.status}</StyledPar>
-      {/* <StyledP>Status: {character.status}</StyledP> */}
-      <StyledP>Origin: {character.origin.name}</StyledP>
-      <StyledP>Location: {character.location.name}</StyledP>
-      <StyledPar>Episodes</StyledPar>
-    </CardContent>)
+
+export default function EpisodeCard({ name, air_date, episode, url }) {
+    // image={image}
+    return (
+        <CardContent>
+            <Title>{name}</Title>
+            <StyledP>Date: {air_date}</StyledP>
+            {/* <StyledP>Status: {character.status}</StyledP> */}
+            <StyledP>Episode: {episode}</StyledP>
+            <Link to={url}>Watch</Link>
+        </CardContent>
+    )
 }
